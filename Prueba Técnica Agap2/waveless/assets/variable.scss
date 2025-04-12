@@ -1,0 +1,33 @@
+// Font family Syne
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Syne:wght@400..800&display=swap');
+// Font family Nunito
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+// Colores
+$color-primary: #FF8F50;
+$color-secondary: #622F60;
+$color-light: #FBF6F4;
+$black: #342E34;
+$white: #fff;
+$color-muted: #777;
+$color-footer: #f1ecf0;
+
+// Tipografía
+$font-syne: 'Syne', sans-serif;
+
+$font-nunito: "Nunito", sans-serif;
+
+
+// Espaciado
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 2rem;
+
+// Bordes
+$radius-sm: 0.5rem;
+$radius-md: 1rem;
+$radius-xl: 2rem;
+
+// Sombras
+$shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 10px rgba(0, 0, 0, 0.1);
