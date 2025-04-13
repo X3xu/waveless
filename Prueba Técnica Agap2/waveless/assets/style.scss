@@ -12,12 +12,13 @@ body {
 
 // BOTONES
 .button {
-  padding: 0.6rem 1.5rem;
-  border: none;
-  border-radius: 2rem;
-  font-weight: 600;
-  text-align: center;
   cursor: pointer;
+  border: none;
+  border-radius: 208px;
+  font-weight: 600;
+  font-family: $font-nunito;
+  padding: 8px 14px;
+  text-align: center;
   transition: background-color 0.3s ease;
 
   &--primary {
@@ -32,8 +33,10 @@ body {
   }
 
   &--cta {
-    background-color: #F68B4D;
-    color: #fff;
+    background-color: $color-primary;
+    color: $black;
+    text-decoration: none;
+    padding: 16px 48px;
   }
 }
 
@@ -41,6 +44,8 @@ body {
 .header {
   background-color: #fff;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 12px 16px;
+  width: 100%;
 
   &__container {
     display: flex;
@@ -48,14 +53,25 @@ body {
     justify-content: space-between;
   }
 
+  &__logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+    span {
+      font-family: $font-nunito;
+      color: $color-secondary;
+      font-weight: 900;
+      margin-left: 4px;
+    }
+  }  
+
   &__logo img {
     height: 32px;
   }
 
   &__nav .nav__list {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
+    display: none;
   }
 
   .nav__link {
@@ -67,6 +83,11 @@ body {
       color: #F68B4D;
     }
   }
+}
+
+
+.intro {
+
 }
 
 // HERO
@@ -91,21 +112,45 @@ body {
 
 // INTRO
 .intro {
-  padding: 3rem 2rem;
+  padding: 0 32px;
   text-align: center;
 
-  &__title {
-    font-size: 2rem;
-    font-weight: 600;
+  &.intro__container {
+    margin-bottom: 40px;
+    
+    .intro__title {
+      color: $color-primary;
+      font-family: 'Syne';
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 30px;
+    }
+
+    &.intro__text {
+      color: $color-grey;
+      font-family: $font-nunito;
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 30px;
+    }
   }
 
-  &__text {
-    color: #777;
+  button {
+    background-color: #FAF7F5;
+    border: 1px solid #622F6029;
+    border-radius: 208px;
+    color: $black;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    padding: 8px 14px;
+    text-decoration: none;
   }
 }
 
 // FILTROS (SIDEBAR)
 .filters {
+  display: none;
   background-color: #f7f7f7;
   padding: 2rem;
   border-radius: 1rem;
@@ -189,25 +234,30 @@ body {
     }
 
     & .card__tag {
+      border-radius: 208px;
       position: absolute;
       top: 1rem;
       right: 1rem;
-      background: linear-gradient(to right, #FF9F4A, #F76B1C);
-      color: #fff;
-      padding: 0.4rem 0.8rem;
-      border-radius: 1rem;
-      font-size: 0.75rem;
-      font-weight: bold;
+      background: $color-primary;
+      color: $black;
+      padding: 12px 16px;
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 800;
     }
-  }
-
-  &__content {
-    padding: 1rem;
   }
 
   &__location {
     font-size: 0.85rem;
     color: #777;
+    margin: 16px;
+
+    span {
+      color: $color-secondary;
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: 700;
+    }
   }
 
   &__title {
@@ -223,18 +273,37 @@ body {
   }
 
   &__actions {
+    align-items: center;
+    background-color: #FBF6F4;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    width: 100%;
+    padding: 12px 16px;
 
     .card__link {
-      font-size: 0.9rem;
+      color: $color-secondary;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 16px;
       text-decoration: underline;
-      color: #777;
+    }
+    .card__link::after {
+      content: '>';
+      transform: rotate(90deg);
+      color: $color-secondary;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 16px;
     }
 
     .button--secondary {
-      font-size: 0.85rem;
+      background-color: $white;
+      border: 1px solid $color-secondary;
+      color: $color-secondary;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+      padding: 8px 24px;
     }
   }
 }
@@ -248,12 +317,33 @@ body {
 
 // FOOTER
 .footer {
-  background-color: #f1ecf0;
-  text-align: center;
-  padding: 2rem;
 
-  &__text {
-    color: #777;
-    font-size: 0.85rem;
+  &__container {
+    align-items: center;
+    background-color: #FAF7F5;
+    display: inline-flex;
+    padding: 48px;
+    justify-content: flex-start;
+    width: 100%;
+    
+    span {
+      font-family: $font-nunito;
+      color: $color-secondary;
+      font-weight: 900;
+      margin-left: 4px;
+    }
+  }  
+
+  &__copy{
+    background-color: #E0D9E0;
+    text-align: center;
+  
+    color: $color-secondary;
+    font-size: 14px;
+    font-family: 'Nunito';
+    font-weight: 700;
+    line-height: 20px;
+    padding: 16px;
+    
   }
 }

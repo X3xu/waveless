@@ -13,19 +13,15 @@ html {
 }
 
 body {
-  font-family: $font-main;
-  background-color: $color-background;
-  color: $color-dark;
+  background-color: $white;
+  font-family: 'Nunito';
+}
+
+button, a { 
+  text-decoration: none;
 }
 
 img {
   height: auto;
   display: block;
-}
-
-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font: inherit;
 }
