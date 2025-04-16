@@ -106,7 +106,7 @@ body {
 }
 .header__logo {
   display: inline-flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
 }
 .header__logo span {
@@ -128,6 +128,15 @@ body {
 }
 .header .nav__link:hover {
   color: #F68B4D;
+}
+.header .header__actions .burger {
+  cursor: pointer;
+  color: #622F60;
+  height: 24px;
+  width: 24px;
+}
+.header .header__actions .booking {
+  display: none;
 }
 
 .hero {
@@ -151,33 +160,47 @@ body {
   padding: 0 32px;
   text-align: center;
 }
-.intro.intro__container {
+.intro .intro__container {
   margin-bottom: 40px;
 }
-.intro.intro__container .intro__title {
-  color: #FF8F50;
+.intro .intro__container .intro__title {
+  color: #622F60;
   font-family: "Syne";
   font-size: 30px;
   font-weight: 700;
   line-height: 30px;
 }
-.intro.intro__container.intro__text {
+.intro .intro__container.intro__text {
   color: #6B7D8D;
   font-family: "Nunito", sans-serif;
   font-size: 30px;
   font-weight: 700;
   line-height: 30px;
 }
-.intro button {
+.intro .filter__button {
   background-color: #FAF7F5;
   border: 1px solid rgba(98, 47, 96, 0.1607843137);
   border-radius: 208px;
   color: #342E34;
+  cursor: pointer;
   font-weight: 600;
   font-size: 20px;
   line-height: 24px;
-  padding: 8px 14px;
+  padding: 8px 16px;
+  position: relative;
   text-decoration: none;
+  text-align: right;
+}
+.intro .filter__button span {
+  padding-left: 30px;
+}
+.intro .filter__button::before {
+  content: "";
+  background-image: url("../images/filter.svg");
+  left: 7%;
+  position: absolute;
+  height: 24px;
+  width: 24px;
 }
 
 .filters {
@@ -223,7 +246,6 @@ body {
 
 .cards {
   flex: 1;
-  padding-left: 2rem;
 }
 .cards__title {
   font-size: 1.5rem;
@@ -244,6 +266,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 10px 15px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0, 0, 0, 0.02);
 }
 .card__image {
   position: relative;
@@ -280,7 +304,8 @@ body {
 .card__title {
   font-size: 1rem;
   font-weight: 600;
-  margin: 0.5rem 0;
+  margin-bottom: 16px;
+  margin-left: 16px;
 }
 .card__price {
   color: #3B3B3B;
@@ -292,8 +317,8 @@ body {
   background-color: #FBF6F4;
   display: flex;
   justify-content: space-between;
-  width: 100%;
   padding: 12px 16px;
+  width: 100%;
 }
 .card__actions .card__link {
   color: #622F60;
@@ -349,4 +374,55 @@ body {
   font-weight: 700;
   line-height: 20px;
   padding: 16px;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto;
+  overflow: hidden;
+}
+.carousel__wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+.carousel__slide {
+  min-width: 100%;
+  height: auto;
+  display: block;
+}
+.carousel__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 1;
+}
+.carousel__arrow--left {
+  left: 10px;
+}
+.carousel__arrow--right {
+  right: 10px;
+}
+.carousel__dots {
+  text-align: center;
+  margin-top: 1rem;
+}
+.carousel__dot {
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.carousel__dot--active {
+  background-color: #717171;
 }/*# sourceMappingURL=style.css.map */

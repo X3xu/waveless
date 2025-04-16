@@ -7,6 +7,7 @@
     <title>waveless</title>
     <link rel="icon" type="image/x-icon" href="images/logo.svg">
     <link rel="stylesheet" href="assets/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
     <body>
         <header class="header">
@@ -24,7 +25,8 @@
                     </ul>
                 </nav>
                 <div class="header__actions">
-                    <a href="#" class="button button--primary">Reserva</a>
+                    <a href="#" class="burger"> &#9776;</a>
+                    <button href="#" class="button button--primary booking">Reserva</button>
                 </div>
             </div>
         </header>
@@ -36,9 +38,26 @@
                 <a href="#" class="button button--cta">Más información</a>
             </div>
             <div class="hero__slider">
-                <!-- Puntos del slider -->
+                <div class="carousel">
+                    <div class="carousel__wrapper" id="carouselSlides">
+                      <img src="images/asia.svg" class="carousel__slide" alt="Slide 1" />
+                      <img src="images/asia.svg" class="carousel__slide" alt="Slide 2" />
+                      <img src="images/asia.svg" class="carousel__slide" alt="Slide 3" />
+                    </div>
+                
+                    <button class="carousel__arrow carousel__arrow--left" id="prevBtn">&#10094;</button>
+                    <button class="carousel__arrow carousel__arrow--right" id="nextBtn">&#10095;</button>
+                
+                    <div class="carousel__dots" id="carouselDots">
+                      <span class="carousel__dot carousel__dot--active" data-slide="0"></span>
+                      <span class="carousel__dot" data-slide="1"></span>
+                      <span class="carousel__dot" data-slide="2"></span>
+                    </div>
+                  </div
             </div>
         </section>
+
+        
 
         <main class="main">
             <section class="intro">
@@ -46,7 +65,7 @@
                     <h2 class="intro__title">Vive tus propias aventuras</h2>
                     <p class="intro__text">Para los que les gusta explorar y conocer mundo sin complejos</p>
                 </div>
-                <button class="filter__button"> Ver filtros </button>
+                <button class="filter__button"> <span>Ver filtros</span> </button>
             </section>
 
             <section class="explorer">
@@ -129,5 +148,7 @@
                 <p>&copy;2024 Waveless - Todos los derechos reservados.</p>
             </div>
         </footer>
+        <script src="script.js"></script>
     </body>
+   
 </html>

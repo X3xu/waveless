@@ -55,7 +55,7 @@ body {
 
   &__logo {
     display: inline-flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     
     span {
@@ -83,11 +83,20 @@ body {
       color: #F68B4D;
     }
   }
-}
 
+  .header__actions {
 
-.intro {
+    .burger {
+      cursor: pointer;
+      color: $color-secondary;
+      height: 24px;
+      width: 24px;
+    }
 
+    .booking {
+      display: none;
+    }
+  }
 }
 
 // HERO
@@ -115,11 +124,11 @@ body {
   padding: 0 32px;
   text-align: center;
 
-  &.intro__container {
+  .intro__container {
     margin-bottom: 40px;
     
     .intro__title {
-      color: $color-primary;
+      color: $color-secondary;
       font-family: 'Syne';
       font-size: 30px;
       font-weight: 700;
@@ -135,16 +144,32 @@ body {
     }
   }
 
-  button {
+  .filter__button {
     background-color: #FAF7F5;
     border: 1px solid #622F6029;
     border-radius: 208px;
     color: $black;
+    cursor: pointer;
     font-weight: 600;
     font-size: 20px;
     line-height: 24px;
-    padding: 8px 14px;
+    padding: 8px 16px;
+    position: relative;
     text-decoration: none;
+    text-align: right;
+
+    span {
+      padding-left: 30px;
+    }
+  }
+
+  .filter__button::before {
+    content:'';
+    background-image: url('../images/filter.svg');
+    left: 7%;
+    position: absolute;
+    height: 24px;
+    width: 24px;
   }
 }
 
@@ -200,7 +225,6 @@ body {
 // TARJETAS DE AVENTURA
 .cards {
   flex: 1;
-  padding-left: 2rem;
 
   &__title {
     font-size: 1.5rem;
@@ -223,6 +247,12 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: hidden;
+  // Sombra mejorada para un look más moderno y elevado
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.05),
+    0 10px 15px rgba(0, 0, 0, 0.05),
+    0 0 0 1px rgba(0, 0, 0, 0.02);
 
   &__image {
     position: relative;
@@ -263,7 +293,8 @@ body {
   &__title {
     font-size: 1rem;
     font-weight: 600;
-    margin: 0.5rem 0;
+    margin-bottom: 16px;
+    margin-left: 16px;
   }
 
   &__price {
@@ -277,8 +308,8 @@ body {
     background-color: #FBF6F4;
     display: flex;
     justify-content: space-between;
-    width: 100%;
     padding: 12px 16px;
+    width: 100%;
 
     .card__link {
       color: $color-secondary;
@@ -334,7 +365,7 @@ body {
     }
   }  
 
-  &__copy{
+  &__copy {
     background-color: #E0D9E0;
     text-align: center;
   
@@ -347,3 +378,64 @@ body {
     
   }
 }
+
+
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto;
+  overflow: hidden;
+
+  &__wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  &__slide {
+    min-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    z-index: 1;
+
+    &--left {
+      left: 10px;
+    }
+
+    &--right {
+      right: 10px;
+    }
+  }
+
+  &__dots {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  &__dot {
+    display: inline-block;
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &--active {
+      background-color: #717171;
+    }
+  }
+}
+
