@@ -244,18 +244,25 @@ body {
   cursor: pointer;
 }
 
-.cards {
-  flex: 1;
+@media only screen and (max-width: 744px) {
+  .cards {
+    align-items: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
 }
 .cards__title {
   font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 1.5rem;
+  font-family: "Syne";
+  margin-bottom: 16px;
+  margin-top: 24px;
 }
 .cards__grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 1.5rem;
+  gap: 24px;
 }
 
 .card {
@@ -267,6 +274,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
+  max-width: 360px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 10px 15px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0, 0, 0, 0.02);
 }
 .card__image {
@@ -274,7 +282,7 @@ body {
 }
 .card__image img {
   width: 100%;
-  height: 160px;
+  height: 204px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -308,32 +316,53 @@ body {
   margin-left: 16px;
 }
 .card__price {
-  color: #3B3B3B;
-  font-weight: bold;
-  margin: 0.5rem 0;
+  align-items: flex-start;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  font-family: "Nunito";
+  display: flex;
+  flex-direction: column;
+}
+.card__price strong {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 24px;
+  font-family: "Nunito";
 }
 .card__actions {
-  align-items: center;
   background-color: #FBF6F4;
-  display: flex;
   justify-content: space-between;
   padding: 12px 16px;
   width: 100%;
+}
+.card__actions .box__prices {
+  align-items: flex-end;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
 }
 .card__actions .card__link {
   color: #622F60;
   font-size: 14px;
   font-weight: 600;
+  font-family: "Nunito";
   line-height: 16px;
   text-decoration: underline;
 }
 .card__actions .card__link::after {
-  content: ">";
-  transform: rotate(90deg);
+  content: "";
+  background-image: url("../images/desglose.svg");
+  background-repeat: no-repeat;
   color: #622F60;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 16px;
+  display: inline-block;
+  margin-left: 4px;
+  margin-bottom: 2px;
+  height: 6px;
+  width: 9px;
+}
+.card__actions .box__button {
+  display: flex;
 }
 .card__actions .button--secondary {
   background-color: #fff;
@@ -341,14 +370,20 @@ body {
   color: #622F60;
   font-weight: 600;
   font-size: 16px;
+  flex: 1;
   line-height: 24px;
   padding: 8px 24px;
 }
 
 .explorer__container {
+  align-items: center;
   display: flex;
-  gap: 2rem;
-  padding: 3rem 2rem;
+  justify-content: center;
+}
+@media only screen and (min-width: 1025px) {
+  .explorer__container {
+    width: 1128px;
+  }
 }
 
 .footer__container {
