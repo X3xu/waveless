@@ -42,6 +42,19 @@
   padding: 0;
 }
 
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  display: block;
+  text-align: inherit;
+  unicode-bidi: normal;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -51,7 +64,7 @@ body {
   font-family: "Nunito";
 }
 
-button, a {
+a {
   text-decoration: none;
 }
 
@@ -60,6 +73,57 @@ img {
   display: block;
 }
 
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
 body {
   font-family: "Poppins", sans-serif;
   color: #3B3B3B;
@@ -87,8 +151,8 @@ body {
   color: #563654;
 }
 .button--cta {
-  background-color: #FF8F50;
-  color: #342E34;
+  background-color: #ff8f50;
+  color: #342e34;
   text-decoration: none;
   padding: 16px 48px;
 }
@@ -97,6 +161,7 @@ body {
   background-color: #fff;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   padding: 12px 16px;
+  border-bottom: 1px solid #ff8f50;
   width: 100%;
 }
 .header__container {
@@ -111,32 +176,56 @@ body {
 }
 .header__logo span {
   font-family: "Nunito", sans-serif;
-  color: #622F60;
+  color: #622f60;
   font-weight: 900;
   margin-left: 4px;
 }
 .header__logo img {
   height: 32px;
 }
+@media only screen and (max-width: 744px) {
+  .header__nav .nav__list {
+    display: none;
+  }
+}
 .header__nav .nav__list {
-  display: none;
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 72px;
+  list-style: none;
+  flex-wrap: wrap;
+}
+.header__item {
+  text-decoration: none;
 }
 .header .nav__link {
-  color: #3B3B3B;
-  font-weight: 500;
+  color: #342e34;
   text-decoration: none;
 }
 .header .nav__link:hover {
   color: #F68B4D;
 }
+@media screen and (max-width: 744px) {
+  .header .header__actions .burger {
+    cursor: pointer;
+    color: #622f60;
+    height: 24px;
+    width: 24px;
+  }
+}
 .header .header__actions .burger {
-  cursor: pointer;
-  color: #622F60;
-  height: 24px;
-  width: 24px;
+  display: none;
 }
 .header .header__actions .booking {
-  display: none;
+  display: block;
+  border-radius: 208px;
+  padding: 12px 40px;
 }
 
 .hero {
@@ -164,14 +253,14 @@ body {
   margin-bottom: 40px;
 }
 .intro .intro__container .intro__title {
-  color: #622F60;
+  color: #622f60;
   font-family: "Syne";
   font-size: 30px;
   font-weight: 700;
   line-height: 30px;
 }
 .intro .intro__container.intro__text {
-  color: #6B7D8D;
+  color: #6b7d8d;
   font-family: "Nunito", sans-serif;
   font-size: 30px;
   font-weight: 700;
@@ -181,7 +270,7 @@ body {
   background-color: #FAF7F5;
   border: 1px solid rgba(98, 47, 96, 0.1607843137);
   border-radius: 208px;
-  color: #342E34;
+  color: #342e34;
   cursor: pointer;
   font-weight: 600;
   font-size: 20px;
@@ -204,10 +293,10 @@ body {
 }
 
 .filters {
-  display: none;
   background-color: #f7f7f7;
   padding: 2rem;
   border-radius: 1rem;
+  margin-right: 24px;
   width: 260px;
 }
 .filters__title {
@@ -238,20 +327,12 @@ body {
   margin-bottom: 0.5rem;
 }
 .filters__more {
-  color: #F68B4D;
+  color: #ff8f50;
   font-size: 0.9rem;
   text-decoration: underline;
   cursor: pointer;
 }
 
-@media only screen and (max-width: 744px) {
-  .cards {
-    align-items: center;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-}
 .cards__title {
   font-size: 1.5rem;
   font-weight: 600;
@@ -260,9 +341,9 @@ body {
   margin-top: 24px;
 }
 .cards__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  display: flex;
   gap: 24px;
+  flex-wrap: wrap;
 }
 
 .card {
@@ -291,8 +372,8 @@ body {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: #FF8F50;
-  color: #342E34;
+  background: #ff8f50;
+  color: #342e34;
   padding: 12px 16px;
   font-size: 12px;
   line-height: 16px;
@@ -304,7 +385,7 @@ body {
   margin: 16px;
 }
 .card__location span {
-  color: #622F60;
+  color: #622f60;
   font-size: 14px;
   line-height: 18px;
   font-weight: 700;
@@ -343,7 +424,7 @@ body {
   margin-bottom: 12px;
 }
 .card__actions .card__link {
-  color: #622F60;
+  color: #622f60;
   font-size: 14px;
   font-weight: 600;
   font-family: "Nunito";
@@ -354,7 +435,7 @@ body {
   content: "";
   background-image: url("../images/desglose.svg");
   background-repeat: no-repeat;
-  color: #622F60;
+  color: #622f60;
   display: inline-block;
   margin-left: 4px;
   margin-bottom: 2px;
@@ -366,8 +447,8 @@ body {
 }
 .card__actions .button--secondary {
   background-color: #fff;
-  border: 1px solid #622F60;
-  color: #622F60;
+  border: 1px solid #622f60;
+  color: #622f60;
   font-weight: 600;
   font-size: 16px;
   flex: 1;
@@ -376,13 +457,18 @@ body {
 }
 
 .explorer__container {
-  align-items: center;
+  margin: 0 auto;
   display: flex;
-  justify-content: center;
+}
+@media only screen and (max-width: 744px) {
+  .explorer__container {
+    align-items: center;
+    justify-content: center;
+  }
 }
 @media only screen and (min-width: 1025px) {
   .explorer__container {
-    width: 1128px;
+    width: 1372px;
   }
 }
 
@@ -396,14 +482,14 @@ body {
 }
 .footer__container span {
   font-family: "Nunito", sans-serif;
-  color: #622F60;
+  color: #622f60;
   font-weight: 900;
   margin-left: 4px;
 }
 .footer__copy {
   background-color: #E0D9E0;
   text-align: center;
-  color: #622F60;
+  color: #622f60;
   font-size: 14px;
   font-family: "Nunito";
   font-weight: 700;
@@ -460,4 +546,110 @@ body {
 }
 .carousel__dot--active {
   background-color: #717171;
+}
+
+.filters {
+  padding: 1rem;
+  background-color: #fdf9f6;
+  border-radius: 8px;
+  font-family: "Syne", sans-serif;
+  color: #622f60;
+}
+.filters__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+.filters__block {
+  border-top: 1px solid #e0dcd8;
+  padding: 1rem 0;
+}
+.filters__block-title {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.filters__block-title .filters__block-icon {
+  margin-right: 8px;
+  font-size: 1.2rem;
+}
+.filters__block-title .filters__arrow {
+  font-size: 0.875rem;
+  color: #ff8f50;
+}
+.filters__block-title .filters__arrow--down {
+  transform: rotate(90deg);
+}
+.filters__block--open .filters__options,
+.filters__block--open .filters__price-inputs {
+  display: block;
+}
+.filters__block--open .filters__arrow {
+  transform: rotate(90deg);
+}
+.filters__options {
+  list-style: none;
+  padding-left: 0;
+  margin: 0.5rem 0;
+  display: none;
+}
+.filters__options .filters__option {
+  margin: 0.5rem 0;
+}
+.filters__options .filters__option label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: "Nunito";
+  color: #342e34;
+  cursor: pointer;
+}
+.filters__options .filters__option label input[type=checkbox] {
+  accent-color: #ff8f50;
+  width: 1rem;
+  height: 1rem;
+}
+.filters__options .filters__option label .info-icon {
+  font-size: 0.75rem;
+  color: #000;
+  cursor: help;
+  border-radius: 50%;
+  border: 1px solid #000;
+  width: 1rem;
+  height: 1rem;
+  text-align: center;
+  line-height: 1rem;
+  display: inline-block;
+}
+.filters__more-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #622f60;
+  font-size: 0.875rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.filters__price-inputs {
+  display: none;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.filters__price-inputs .filters__input {
+  padding: 0.6rem 1rem;
+  border: 1px solid #622f60;
+  border-radius: 208px;
+  padding: 12px;
+  font-size: 14px;
+  color: #817781;
+}
+.filters__price-inputs .filters__input::-moz-placeholder {
+  color: #622f60;
+}
+.filters__price-inputs .filters__input::placeholder {
+  color: #622f60;
 }/*# sourceMappingURL=style.css.map */

@@ -72,47 +72,72 @@
             <div class="explorer__container">
                 <aside class="filters">
                     <h3 class="filters__title">Filtrar mi búsqueda</h3>
-
+                  
+                    <!-- Destinos -->
                     <div class="filters__block">
-                        <h4 class="filters__block-title">Destinos</h4>
-                        <!-- Opciones -->
+                      <h4 class="filters__block-title">
+                        <span class="filters__block-icon">🌍</span> Destinos
+                        <span class="filters__arrow">›</span>
+                      </h4>
+                      <!-- Opciones de destinos (a implementar si hace falta) -->
                     </div>
-
+                  
+                    <!-- Aventura -->
+                    <div class="filters__block filters__block--open">
+                      <h4 class="filters__block-title">
+                        <span class="filters__block-icon">⛰️</span> Aventura
+                        <span class="filters__arrow filters__arrow--down">⌄</span>
+                      </h4>
+                      <ul class="filters__options">
+                        <li class="filters__option">
+                          <label><input type="checkbox"> Quads <span class="info-icon">i</span></label>
+                        </li>
+                        <li class="filters__option">
+                          <label><input type="checkbox" checked> Parapente <span class="info-icon">i</span></label>
+                        </li>
+                        <li class="filters__option">
+                          <label><input type="checkbox"> Rafting <span class="info-icon">i</span></label>
+                        </li>
+                        <li class="filters__option">
+                          <label><input type="checkbox" checked> Explora <span class="info-icon" title="Lorem ipsum">i</span></label>
+                        </li>
+                        <li class="filters__option">
+                          <label><input type="checkbox"> Buceo</label>
+                        </li>
+                        <li class="filters__option">
+                          <label><input type="checkbox"> Paracaídas <span class="info-icon">i</span></label>
+                        </li>
+                        <li class="filters__option">
+                          <label><input type="checkbox"> Snowboard <span class="info-icon">i</span></label>
+                        </li>
+                        <li class="filters__option">
+                          <label><input type="checkbox"> Surf <span class="info-icon">i</span></label>
+                        </li>
+                      </ul>
+                      <a href="#" class="filters__more-link">Ver 21 más</a>
+                    </div>
+                  
+                    <!-- Alojamiento -->
                     <div class="filters__block">
-                        <h4 class="filters__block-title">Aventura</h4>
-                        <ul class="filters__list">
-                            <li class="filters__item"><input type="checkbox" id="quads"><label for="quads">Quads</label>
-                            </li>
-                            <li class="filters__item"><input type="checkbox" id="parapente"><label
-                                    for="parapente">Parapente</label></li>
-                            <li class="filters__item"><input type="checkbox" id="rafting"><label
-                                    for="rafting">Rafting</label></li>
-                            <li class="filters__item"><input type="checkbox" id="explora"><label
-                                    for="explora">Explora</label></li>
-                            <li class="filters__item"><input type="checkbox" id="buceo"><label for="buceo">Buceo</label>
-                            </li>
-                            <li class="filters__item"><input type="checkbox" id="paracaidas"><label
-                                    for="paracaidas">Paracaídas</label></li>
-                            <li class="filters__item"><input type="checkbox" id="snowboard"><label
-                                    for="snowboard">Snowboard</label></li>
-                            <li class="filters__item"><input type="checkbox" id="surf"><label for="surf">Surf</label>
-                            </li>
-                        </ul>
-                        <a href="#" class="filters__more">Ver 21 más</a>
+                      <h4 class="filters__block-title">
+                        <span class="filters__block-icon">🏨</span> Alojamiento
+                        <span class="filters__arrow">›</span>
+                      </h4>
                     </div>
-
-                    <div class="filters__block">
-                        <h4 class="filters__block-title">Alojamiento</h4>
-                        <!-- Opciones -->
+                  
+                    <!-- Precio -->
+                    <div class="filters__block filters__block--open">
+                      <h4 class="filters__block-title">
+                        <span class="filters__block-icon">🏷️</span> Precio
+                        <span class="filters__arrow filters__arrow--down">⌄</span>
+                      </h4>
+                      <div class="filters__price-inputs">
+                        <input type="text" placeholder="Mínimo" class="filters__input">
+                        <input type="text" placeholder="Máximo" class="filters__input">
+                      </div>
                     </div>
-
-                    <div class="filters__block">
-                        <h4 class="filters__block-title">Precio</h4>
-                        <input type="text" class="filters__input" placeholder="Mínimo">
-                        <input type="text" class="filters__input" placeholder="Máximo">
-                    </div>
-                </aside>
-
+                  </aside>
+                  
                 <section class="cards">
                     <h3 class="cards__title">Asia</h3>
                     <div class="cards__grid">
