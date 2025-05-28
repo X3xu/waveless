@@ -68,8 +68,10 @@
                 <div class="explorer__container">
 
                     <aside class="filters">
-                        <h3 class="filters__title">Filtrar mi búsqueda</h3>
-
+                        <div class="filters__close">
+                            <h3 class="filters__title">Filtrar mi búsqueda</h3>
+                            <button id="cerrarFilters" class="modal__close" aria-label="Cerrar modal">&times;</button>
+                        </div>
                         <!-- Destinos -->
                         <div class="filters__block">
                             <h4 class="filters__block-title">
@@ -291,7 +293,7 @@
             <div class="modal">
                 <header class="modal__header">
                     <h2 class="modal__title" id="modal__title">Desglose de precios</h2>
-                    <button class="modal__close" aria-label="Cerrar modal">&times;</button>
+                    <button id="cerrarModal" class="modal__close" aria-label="Cerrar modal">&times;</button>
                 </header>
                 <div class="modal__body">
                     <h3 class="modal__destination">

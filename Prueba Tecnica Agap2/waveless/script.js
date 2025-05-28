@@ -112,6 +112,8 @@ document.addEventListener('DOMContentLoaded', () => {
   setInterval(() => goToSlide(currentSlide + 1), 5000);
 });
 
+
+/*
 // Menú hamburguesa
 document.addEventListener('DOMContentLoaded', () => {
   const buttonBurger = document.querySelector('.burger');
@@ -138,3 +140,92 @@ document.addEventListener('DOMContentLoaded', () => {
     buttonBurger.style.display = 'none';
   }
 });
+
+// Ver menú filtro 
+
+document.addEventListener('DOMContentLoaded', () => {
+  const buttonFilter = document.querySelector('#cerrarFilters');
+
+  buttonFilter.addEventListener('click', () => showMenu());
+
+  function showMenu(){
+    const menuResponsive = document.querySelector('.filters');
+    menuResponsive.style.display = 'block';
+    buttonBurger.style.display = 'none';
+  }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const buttonFilter = document.querySelector('#cerrarModal');
+
+  buttonFilter.addEventListener('click', () => showMenu());
+
+  function showMenu(){
+    const menuResponsive = document.querySelector('.modal-overlay');
+    menuResponsive.style.display = 'block';
+    buttonBurger.style.display = 'none';
+  }
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  function toggleElement(triggerSelector, elementSelector) {
+    const trigger = document.querySelector(triggerSelector);
+    const element = document.querySelector(elementSelector);
+    
+    if (!trigger || !element) {
+      console.error('Elementos no encontrados:', { triggerSelector, elementSelector });
+      return;
+    }
+
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      element.style.display = element.style.display === 'block' ? 'none' : 'block';
+    });
+  }
+
+  // Uso para el menú de filtros
+  toggleElement('.filter__button', '.filters');
+  
+  // Uso para el botón de cerrar (si existe)
+  toggleElement('#cerrarFilters', '.filters');
+  
+  // Uso para el menú hamburguesa (ejemplo adicional)
+  toggleElement('.burger', '.nav__list');
+
+  toggleElement('#cerrarModal', '.modal-overlay');
+}); */
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  function setupToggle(triggerSelector, targetSelector, { hideTrigger = false, showOnly = false } = {}) {
+    const trigger = document.querySelector(triggerSelector);
+    const target = document.querySelector(targetSelector);
+
+    if (!trigger || !target) {
+      console.warn('Elementos no encontrados:', { triggerSelector, targetSelector });
+      return;
+    }
+
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      if (showOnly) {
+        target.style.display = 'block';
+      } else {
+        target.style.display = target.style.display === 'block' ? 'none' : 'block';
+      }
+
+      if (hideTrigger) {
+        trigger.style.display = 'none';
+      }
+    });
+  }
+
+  // Configuración de botones
+  setupToggle('.burger', '.nav__list', { hideTrigger: true, showOnly: true });
+  setupToggle('.filter__button', '.filters');
+  setupToggle('#cerrarFilters', '.filters');
+});
+

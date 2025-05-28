@@ -101,16 +101,16 @@ body {
     flex-wrap: wrap;
   }
 
-&__item {
-  position: relative;
-  border: 1px solid red;
-  transition: border-color 0.3s ease;
-  width: auto;
+  &__item {
+    position: relative;
+    border: 1px solid red;
+    transition: border-color 0.3s ease;
+    width: auto;
 
-  &:hover {
-    border-bottom-color: $color-primary;
+    &:hover {
+      border-bottom-color: $color-primary;
+    }
   }
-}
 
 
   .nav__link {
@@ -180,7 +180,7 @@ body {
         width: 24px;
       }
     }
-    
+
     @media screen and (min-width: 1024px) {
       .burger {
         display: none;
@@ -215,10 +215,11 @@ body {
   overflow: hidden;
   margin-bottom: 56px;
 
-    &::before {
+  &::before {
     content: "";
     position: absolute;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.4);
@@ -395,6 +396,19 @@ body {
   border-radius: 1rem;
   margin-right: 24px;
   width: 350px;
+
+  &__close {
+    display: flex;
+    position: relative;
+
+    .modal__close {
+      position: absolute;
+      top: -50%;
+      right: 10%;
+      transform: translate(50%, 50%);
+      font-size: 2.5rem;
+    }
+  }
 
   &__title {
     font-size: 1.2rem;
@@ -767,7 +781,7 @@ body {
       .filters__arrow {
         font-size: 0.875rem;
         color: $color-primary;
-        margin-left: 10px; 
+        margin-left: 10px;
 
       }
     }
@@ -871,8 +885,10 @@ body {
 
 .modal-overlay {
   position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   background: rgba(0, 0, 0, 0.4);
   display: flex;
   justify-content: center;
@@ -882,7 +898,7 @@ body {
 
 .modal {
   background: #fff;
-  border-radius: 208px;
+  border-radius: 24px;
   color: $black;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   max-width: 320px;
@@ -891,6 +907,8 @@ body {
   &__header {
     @include fontStyle ($weight: 700, $family: 'Nunito');
     align-items: center;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
     background-color: #FBF6F4;
     border-bottom: 1px solid #eaeaea;
     display: flex;
@@ -955,13 +973,15 @@ body {
   }
 
   &__amount {
-     @include fontStyle($family: 'Nunito', $weight: 700);
+    @include fontStyle($family: 'Nunito', $weight: 700);
 
   }
 
   &__footer {
     background-color: #FBF6F4;
     border-top: 1px solid #eaeaea;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
     padding: 1rem;
     font-size: 1rem;
     font-weight: bold;
@@ -982,16 +1002,25 @@ body {
   display: none !important;
 }
 
-@media (min-width: 744px) and (max-width: 1024px) {
+@media (min-width: 390px) and (max-width: 1440px) {
   .filters {
     position: absolute;
     left: 0px;
     z-index: 2;
-     box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2);
-     border-radius: 0;
+    box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2);
+    border-radius: 0;
   }
 
   .explorer__container {
     position: relative;
+  }
+}
+
+@media (max-width: 390px) {
+  .filters {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    z-index: 3;
   }
 }
