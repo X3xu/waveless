@@ -169,11 +169,6 @@ body {
   align-items: center;
   justify-content: space-between;
 }
-@media only screen and (max-width: 1024px) {
-  .header__container {
-    flex-direction: column;
-  }
-}
 .header__logo {
   display: inline-flex;
   align-items: flex-end;
@@ -190,7 +185,7 @@ body {
 }
 @media only screen and (max-width: 1024px) {
   .header__nav .nav__list {
-    display: flex !important;
+    display: none;
     flex-direction: column;
     margin-top: 40px;
   }
@@ -229,7 +224,7 @@ body {
   display: inline-block;
 }
 .header .nav__link:hover {
-  color: #F68B4D;
+  color: #ff8f50;
 }
 .header .nav__link:hover::after {
   content: "";
@@ -241,7 +236,7 @@ body {
   height: 0;
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
-  border-top: 6px solid #F68B4D;
+  border-top: 6px solid #ff8f50;
 }
 .header .nav__link.ico_aventura::before {
   content: "";
@@ -337,7 +332,7 @@ body {
   font-size: 1.2rem;
 }
 .hero .button--cta {
-  background-color: #ff884d;
+  background-color: #ff8f50;
   border: none;
   padding: 0.75rem 1.5rem;
   border-radius: 2rem;
@@ -346,7 +341,7 @@ body {
   transition: background 0.3s ease;
 }
 .hero .button--cta:hover {
-  background-color: #e76e29;
+  background-color: #ff8f50;
 }
 
 .carousel {
@@ -777,6 +772,11 @@ body {
   color: #622f60;
   height: 100%;
   min-width: 264px;
+}
+@media (min-width: 1440px) {
+  .filters #cerrarFilters {
+    display: none;
+  }
 }
 .filters__title {
   font-size: 1.25rem;

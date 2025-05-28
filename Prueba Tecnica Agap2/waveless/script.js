@@ -53,6 +53,13 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   const modal = document.querySelector(".modal-overlay");
   const closeModalBtn = document.querySelector(".modal__close");
+  const extraCloseBtn = document.getElementById("cerrarModal");
+
+  if (extraCloseBtn) {
+    extraCloseBtn.addEventListener("click", () => {
+      modal.classList.add("hidden");
+    });
+  }
 
   // Abre modal al hacer clic en cualquier "Ver desglose"
   document.querySelectorAll(".card__link").forEach(link => {
@@ -193,8 +200,6 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Uso para el menú hamburguesa (ejemplo adicional)
   toggleElement('.burger', '.nav__list');
-
-  toggleElement('#cerrarModal', '.modal-overlay');
 }); */
 
 
@@ -224,7 +229,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Configuración de botones
-  setupToggle('.burger', '.nav__list', { hideTrigger: true, showOnly: true });
   setupToggle('.filter__button', '.filters');
   setupToggle('#cerrarFilters', '.filters');
 });
